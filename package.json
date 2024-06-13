@@ -1,0 +1,35 @@
+{
+  "name": "whitejune",
+  "version": "1.0.0",
+  "description": "Тестовое задание по верстке для ГАУ ИКТ АО",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp",
+    "deploy": "gulp deploy"
+  },
+  "keywords": [
+    "белый",
+    "июнь",
+    "white",
+    "june"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chivirda/whitejune.git"
+  },
+  "author": "Sergey Chivirda",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^9.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.70.0"
+  }
+}
