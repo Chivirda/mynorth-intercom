@@ -114,17 +114,22 @@
                     <figcaption>Школьная</figcaption>
                 </figure>
             </div>
-            <form class="intercom-modal__form " action="">
+            <form class="intercom-modal__form" action="">
                 <input type="text" class="form-input" id="personalId" placeholder="Персональный идентификатор">
-                <label for="answer" class="form-label__strong"><strong>Выберите способ получения ответа:</strong></label><br>
+                <label class="form-label__strong"><strong>Выберите способ получения
+                        ответа:</strong></label><br>
                 <div class="radio-buttons">
-                    <input type="radio" name="answer" id="phone">
-                    <label for="phone">Звонок оператора/СМС</label><br>
-                    <input type="radio" name="answer" id="email">
-                    <label for="email">По электронной почте</label><br>
+                    <div class="radio-wrapper">
+                        <input type="radio" name="answer" id="phone">
+                        <label for="phone" class="form-label__regular">Звонок оператора/СМС</label><br>
+                    </div>
+                    <div class="radio-wrapper">
+                        <input type="radio" name="answer" id="email">
+                        <label for="email" class="form-label__regular">По электронной почте</label><br>
+                    </div>
                 </div>
                 <input type="text" class="form-input" name="address" id="address"
-                    placeholder="Введите адрес для подключения (г. Архангельскб ул. Федота Шубина, д. 30)">
+                    placeholder="Введите адрес для подключения (г. Архангельск ул. Федота Шубина, д. 30)">
                 <div class="form-inputs">
                     <input type="tel" class="form-input" name="phoneNumber" id="phoneNumber"
                         placeholder="Номер телефона">
@@ -132,22 +137,24 @@
                         placeholder="Электронная почта">
                 </div>
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="agreement" id="agreement">
-                    <label for="agreement">Я согласен с <a href="#">Условиями предоставления ООО «Цифрал-Сервис»</a>
+                    <input type="checkbox" name="agreement" id="agreement" checked>
+                    <label for="agreement" class="form-label__regular">Я согласен с <a href="#">Условиями предоставления
+                            ООО «Цифрал-Сервис»</a>
                         услуг по
                         подключению Единой карты жителя Архангельской области в качестве ключа от домофона</label>
                 </div>
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="personalDataAgreement" id="personalDataAgreement">
-                    <label for="personalDataAgreement">Я согласен с <a href="#">политикой обработки персональных
+                    <input type="checkbox" name="personalDataAgreement" id="personalDataAgreement" checked>
+                    <label for="personalDataAgreement" class="form-label__regular">Я согласен с <a href="#">политикой
+                            обработки персональных
                             данных</a>.</label>
                 </div>
                 <input type="submit" class="form-submit" value="Отправить">
-                <p class="intercom-modal__footer">
-                    Если у Вас возникли трудности, Вы можете получить консультацию по электронной почте <strong><a
-                            href="mailto:unicard@arhtc.ru">unicard@arhtc.ru</a></strong>
-                </p>
             </form>
+            <p class="intercom-modal__footer">
+                Если у Вас возникли трудности, Вы можете получить консультацию по электронной почте <strong><a
+                        href="mailto:unicard@arhtc.ru">unicard@arhtc.ru</a></strong>
+            </p>
         </div>
     </div>
 </body>
