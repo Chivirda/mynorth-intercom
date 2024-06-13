@@ -12,20 +12,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -357,6 +343,10 @@ strong {
       max-width: 70%;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 
@@ -405,6 +395,10 @@ strong {
     font-size: 20px;
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .intercom-modal__card {
@@ -440,6 +434,12 @@ strong {
 .form-label__strong {
   font-size: 24px;
   margin-top: 15px;
+
+  // &.error {
+  //   strong {
+  //     color: red !important;
+  //   }
+  // }
 }
 
 .form-label__regular {
@@ -460,6 +460,7 @@ strong {
   input[type="radio"] {
     margin-right: 20px;
     margin-left: 0;
+    margin-top: 0;
 
     /* Стилизация радио кнопок в виде чекбоксов */
     appearance: none;
@@ -567,4 +568,42 @@ strong {
   margin: 40px auto 60px;
   text-align: center;
   max-width: 50%;
+}
+
+.error {
+
+  border: 2px solid red;
+  padding: 10px;
+  animation: shake 0.5s;
+
+}
+
+.error-message {
+  color: red;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  margin: 5px auto;
+  display: none;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
