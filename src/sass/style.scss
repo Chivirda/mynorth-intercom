@@ -24,7 +24,10 @@ h3 {
   line-height: 1em;
 }
 
-$text-font-size: 1.5em;
+$mobile-text: 16px;
+$desktop-text: 20px;
+$mobile-title: 24px;
+$desktop-title: 36px;
 
 b,
 strong {
@@ -47,9 +50,13 @@ strong {
 
 .banner-text {
   text-align: center;
-  font-size: 24px;
+  font-size: 24px !important;
   max-width: 70%;
-  margin: 0 auto;
+  margin: 0 auto !important;
+
+  @media (max-width: 768px) {
+    font-size: 16px !important;
+  }
 }
 
 .singlereport__report {
@@ -101,12 +108,21 @@ strong {
 .intercom-promo__title {
   margin: 0;
   margin-top: 24px;
-  font-size: 36px;
+  font-size: $desktop-title;
+  line-height: 1em;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-title;
+  }
 }
 
 .intercom-promo__text {
   margin: 0;
-  font-size: 20px;
+  font-size: $desktop-text;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+  }
 }
 
 .intercom-promo__title,
@@ -161,7 +177,7 @@ strong {
     @media (max-width: 768px) {
       text-align: center;
       max-width: 100%;
-      font-size: 20px;
+      font-size: $mobile-text;
     }
   }
 }
@@ -170,7 +186,6 @@ strong {
   font-size: 38px;
   font-weight: 600;
   line-height: 1.1em;
-  // margin-bottom: 38px;
   margin-top: 0;
   margin-left: -34px;
   max-width: 75%;
@@ -308,6 +323,11 @@ strong {
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 24px 40px;
+    font-size: $mobile-text;
+  }
 }
 
 .modal-open {
@@ -346,6 +366,17 @@ strong {
 
   @media (max-width: 768px) {
     width: 100%;
+
+    &.active {
+        height: 100%;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
   }
 }
 
@@ -359,6 +390,10 @@ strong {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .intercom-modal__title {
@@ -369,6 +404,12 @@ strong {
   margin-top: 100px;
   max-width: 75%;
   font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    font-size: 42px;
+    text-align: center;
+  }
 }
 
 .intercom-modal__text {
@@ -376,8 +417,14 @@ strong {
   line-height: 1.1em;
   max-width: 75%;
   margin-top: 0;
+  margin-bottom: 15px;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+    text-align: center;
+  }
 }
 
 .intercom-modal__cards {
@@ -398,6 +445,11 @@ strong {
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+
+    figure {
+      max-width: 90%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -416,8 +468,6 @@ strong {
   display: none;
 }
 
-
-
 .form-input {
   box-sizing: border-box;
   width: 100%;
@@ -429,28 +479,38 @@ strong {
   outline: none;
   border: none;
   background-color: #eceaea;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+  }
 }
 
 .form-label__strong {
   font-size: 24px;
   margin-top: 15px;
 
-  // &.error {
-  //   strong {
-  //     color: red !important;
-  //   }
-  // }
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+  }
 }
 
 .form-label__regular {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+  }
 }
 
 .radio-buttons {
   display: flex;
   margin-bottom: 30px;
   grid-gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   .radio-wrapper {
     display: flex;
@@ -502,6 +562,15 @@ strong {
 
   .form-input {
     max-width: 95%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    grid-gap: 20px;
+
+    .form-input {
+      max-width: 100%;
+    }
   }
 }
 
@@ -561,6 +630,11 @@ strong {
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+    padding: 24px 40px;
+  }
 }
 
 .intercom-modal__footer {
@@ -568,6 +642,10 @@ strong {
   margin: 40px auto 60px;
   text-align: center;
   max-width: 50%;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+  }
 }
 
 .error {
@@ -584,6 +662,11 @@ strong {
   font-family: 'Roboto', sans-serif;
   margin: 5px auto;
   display: none;
+
+  @media (max-width: 768px) {
+    font-size: $mobile-text;
+    text-align: center;
+  }
 }
 
 @keyframes shake {
