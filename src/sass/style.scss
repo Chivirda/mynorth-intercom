@@ -491,11 +491,26 @@ strong {
   width: 99%;
   height: auto;
   cursor: pointer;
-  filter: grayscale(100%);
 }
 
-.intercom-modal__card.active {
-  filter: grayscale(0%);
+.intercom-modal__card.main:hover {
+  content: url('../images/main-card.webp');
+  background-size: cover;
+}
+
+.intercom-modal__card.main.active {
+  content: url('../images/main-card-2.webp');
+  background-size: cover;
+}
+
+.intercom-modal__card.school:hover {
+  content: url('../images/school-card.webp');
+  background-size: cover;
+}
+
+.intercom-modal__card.school.active {
+  content: url('../images/school-card-2.webp');
+  background-size: cover;
 }
 
 .intercom-modal__form {
@@ -705,6 +720,8 @@ strong {
   max-width: 50%;
 
   a {
+    color: #000;
+
     &:hover {
       color: $hover-button-color;
     }
