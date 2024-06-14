@@ -14,6 +14,10 @@ button.addEventListener('click', () => {
   modal.setAttribute('style', 'display: flex');
   overlay.setAttribute('style', 'display: block');
   document.body.classList.add('modal-open');
+  
+  if(window.innerWidth <= 768) {
+    modal.classList.add('active');
+  }
 });
 
 overlay.addEventListener('click', () => {

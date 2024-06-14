@@ -28,6 +28,8 @@ $mobile-text: 16px;
 $desktop-text: 20px;
 $mobile-title: 24px;
 $desktop-title: 36px;
+$button-color: #163f61;
+$hover-button-color: #0E72BD;
 
 b,
 strong {
@@ -42,7 +44,7 @@ strong {
 
 .banner-heading {
   text-align: center;
-  font-size: 32px;
+  font-size: 32px !important;
   margin-top: 44px;
   letter-spacing: 0.0001em;
   margin-bottom: 0;
@@ -216,8 +218,10 @@ strong {
       margin-left: 0;
 
     }
+
   }
 }
+
 
 .card-contacts {
   display: grid;
@@ -240,6 +244,11 @@ strong {
     display: grid;
     grid-template-columns: 1fr;
   }
+}
+
+.card-contacts__text {
+  margin-top: 0;
+  margin-bottom: 14px !important;
 }
 
 .card-contacts__info {
@@ -313,7 +322,7 @@ strong {
 }
 
 .intercom-promo__button {
-  background-color: #163f61;
+  background-color: $button-color;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -323,6 +332,10 @@ strong {
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+
+  &:hover {
+    background-color: $hover-button-color;
+  }
 
   @media (max-width: 768px) {
     padding: 24px 40px;
@@ -342,6 +355,7 @@ strong {
   width: 1498px;
   background-color: #fff;
   z-index: 9999;
+  animation: formAppear 0.5s ease-in-out;
 
   &.active {
     height: 100%;
@@ -351,6 +365,18 @@ strong {
 
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+
+  @keyframes formAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -368,18 +394,17 @@ strong {
     width: 100%;
 
     &.active {
-        height: 100%;
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    
-        &::-webkit-scrollbar {
-          display: none;
-        }
+      height: 100%;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
       }
+    }
   }
 }
-
 
 .overlay {
   position: fixed;
@@ -433,6 +458,7 @@ strong {
   grid-gap: 22px;
   margin-top: 8px;
   padding-bottom: 20px;
+  box-sizing: border-box;
 
   figure {
     margin: 0;
@@ -450,6 +476,10 @@ strong {
       max-width: 90%;
       margin: 0 auto;
     }
+
+    figcaption {
+      font-size: $mobile-text;
+    }
   }
 }
 
@@ -466,6 +496,25 @@ strong {
 
 .intercom-modal__form {
   display: none;
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    animation: formAppear 0.5s ease-in-out;
+  }
+
+  @keyframes formAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .form-input {
@@ -497,6 +546,10 @@ strong {
 .form-label__regular {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
+
+  a {
+    text-decoration: underline;
+  }
 
   @media (max-width: 768px) {
     font-size: $mobile-text;
@@ -620,7 +673,7 @@ strong {
 }
 
 .form-submit {
-  background-color: #0e72bd;
+  background-color: $button-color;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -630,6 +683,10 @@ strong {
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+
+  &:hover {
+    background-color: $hover-button-color;
+  }
 
   @media (max-width: 768px) {
     font-size: $mobile-text;
