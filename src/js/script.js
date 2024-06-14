@@ -9,13 +9,14 @@ const phoneRadio = document.querySelector('#phone');
 const emailRadio = document.querySelector('#email');
 const radioButtons = document.querySelector('.radio-buttons');
 const errorMessage = document.querySelector('.error-message');
+const idInput = document.querySelector('#personalId');
 
 button.addEventListener('click', () => {
   modal.setAttribute('style', 'display: flex');
   overlay.setAttribute('style', 'display: block');
   document.body.classList.add('modal-open');
-  
-  if(window.innerWidth <= 768) {
+
+  if (window.innerWidth <= 768) {
     modal.classList.add('active');
   }
 });
@@ -41,9 +42,18 @@ modal.addEventListener('click', e => e.stopPropagation());
 cards.forEach(card => {
   card.addEventListener('click', () => {
     cards.forEach(c => c.classList.remove('active'));
+    const cardId = card.dataset.id;
+    switch (cardId) {
+      case 'school':
+        idInput.placeholder = 'Персональный идентификатор школьной карты';
+        break;
+      case 'main':
+        idInput.placeholder = 'Персональный идентификатор транспортной карты';
+        break;
+    }
+    form.classList.add('active');
     card.classList.add('active');
     modal.classList.add('active');
-    form.classList.add('active');
   });
 });
 
@@ -101,7 +111,7 @@ document.querySelector('#userEmail').addEventListener('blur', () => {
   }
 });
 
-function validatePhone (phone) {
+function validatePhone(phone) {
   const re = /^(\+?7|8)\s?(\d{3})?\s?(\d{3})?\s?(\d{2})?\s?(\d{2})?\s?(\d{2})?[-]?(\d{2})?[-]?(\d{2})$/;
   return re.test(phone);
 }
