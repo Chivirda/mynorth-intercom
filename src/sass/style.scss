@@ -503,6 +503,11 @@ strong {
   background-size: cover;
 }
 
+.intercom-modal__card.main:hover~.card-caption,
+.intercom-modal__card.main.active~.card-caption {
+  color: $hover-button-color;
+}
+
 .intercom-modal__card.school:hover {
   content: url('../images/school-card.webp');
   background-size: cover;
@@ -511,6 +516,11 @@ strong {
 .intercom-modal__card.school.active {
   content: url('../images/school-card-2.webp');
   background-size: cover;
+}
+
+.intercom-modal__card.school:hover~.card-caption,
+.intercom-modal__card.school.active~.card-caption {
+  color: $hover-button-color !important;
 }
 
 .intercom-modal__form {
@@ -556,6 +566,7 @@ strong {
 .form-label__strong {
   font-size: 24px;
   margin-top: 15px;
+  margin-bottom: 24px;
 
   @media (max-width: 768px) {
     font-size: $mobile-text;
