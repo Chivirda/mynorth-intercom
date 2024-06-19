@@ -197,6 +197,14 @@ strong {
   max-width: 75%;
   font-family: 'Montserrat', sans-serif;
 
+  .no-wpap {
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      white-space: inherit;
+    }
+  }
+
   @media (max-width: 768px) {
     font-size: 2em;
     max-width: 90%;
@@ -253,6 +261,12 @@ strong {
 .card-contacts__text {
   margin-top: 0;
   margin-bottom: 14px !important;
+
+  a {
+    &:hover {
+      color: $hover-button-color;
+    }
+  }
 }
 
 .card-contacts__info {
